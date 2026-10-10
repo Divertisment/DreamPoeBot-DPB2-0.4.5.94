@@ -1,0 +1,23 @@
+using System.Diagnostics;
+using System.Reflection;
+using System.Resources;
+using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
+using System.Security;
+using System.Security.Permissions;
+using System.Windows.Resources;
+
+[assembly: SuppressIldasm]
+[assembly: SupportedOSPlatform("Windows7.0")]
+[assembly: TargetPlatform("Windows7.0")]
+[assembly: NeutralResourcesLanguage("en-US")]
+[assembly: AssemblyTitle("DreamPoeBot")]
+[assembly: AssemblyInformationalVersion("1.0.0+aef865dc74363b06149cd93ad99ec703b95b3aea")]
+[assembly: AssemblyFileVersion("0.4.5.94")]
+[assembly: AssemblyProduct("DreamPoeBot")]
+[assembly: AssemblyCompany("DreamPoeBot")]
+[assembly: AssemblyAssociatedContentFile("help/commandlinearguments.txt")]
+[assembly: AssemblyAssociatedContentFile("help/applicationexitcodes.cs")]
+[assembly: AssemblyAssociatedContentFile("log4net.config")]
+[assembly: AssemblyConfiguration("Release-Publish")]
+[assembly: AssemblyVersion("0.4.5.94")]

@@ -1,0 +1,3 @@
+using System.Windows;
+
+internal delegate object Delegate1042(ref DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs_0);

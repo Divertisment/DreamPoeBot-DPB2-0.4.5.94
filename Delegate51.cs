@@ -1,0 +1,3 @@
+using System.Windows.Threading;
+
+internal delegate void Delegate51(object object_0, DispatcherUnhandledExceptionEventHandler dispatcherUnhandledExceptionEventHandler_0);

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="DreamPoeBot.DreamPoe.PremiumContentManagerGui" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localization="clr-namespace:DreamPoeBot.Localization.Wpf;assembly=DreamPoeBot.Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:DreamPoeBot.DreamPoe" xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
+  <ScrollViewer>
+    <Grid>
+      <StackPanel>
+        <ListView Name="PremiumContentListView" BorderThickness="2" BorderBrush="#FF0000FF" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" MinHeight="550" MaxHeight="550" Height="auto" Width="auto" Margin="5,5,0,0" ItemsSource="{Binding Path=PremiumContent}">
+          <ItemsControl.ItemContainerStyle>
+            <Style TargetType="{x:Type ListViewItem}">
+              <Setter Property="HorizontalContentAlignment" Value="Center" />
+              <Setter Property="FontWeight" Value="Bold" />
+              <Setter Property="Background" Value="#00FFFFFF" />
+              <Setter Property="Template">
+                <Setter.Value>
+                  <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <Border BorderBrush="#00FFFFFF" BorderThickness="0" Background="{TemplateBinding Control.Background}">
+                      <GridViewRowPresenter HorizontalAlignment="Stretch" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Width="Auto" Margin="0" Content="{TemplateBinding ContentControl.Content}" />
+                    </Border>
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </ItemsControl.ItemContainerStyle>
+          <ListView.View>
+            <GridView AllowsColumnReorder="False">
+              <GridViewColumn Width="200" DisplayMemberBinding="{Binding Name}">
+                <GridViewColumn.Header>
+                  <localization:LocalizedExtension>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Common.Name</Ctor>
+                  </localization:LocalizedExtension>
+                </GridViewColumn.Header>
+              </GridViewColumn>
+              <GridViewColumn Width="80">
+                <GridViewColumn.Header>
+                  <localization:LocalizedExtension>
+                    <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Common.Enabled</Ctor>
+                  </localization:LocalizedExtension>
+                </GridViewColumn.Header>
+                <GridViewColumn.CellTemplate>
+                  <DataTemplate>
+                    <Grid>
+                      <controls:ToggleSwitch Name="EnableDisableContent" HorizontalAlignment="Center" VerticalAlignment="Center" IsOn="{Binding Enabled, Mode=TwoWay}">
+                        <controls:ToggleSwitch.OffContent>
+                          <localization:LocalizedExtension>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Common.Off</Ctor>
+                          </localization:LocalizedExtension>
+                        </controls:ToggleSwitch.OffContent>
+                        <controls:ToggleSwitch.OnContent>
+                          <localization:LocalizedExtension>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Common.On</Ctor>
+                          </localization:LocalizedExtension>
+                        </controls:ToggleSwitch.OnContent>
+                        <FrameworkElement.ToolTip>
+                          <localization:LocalizedExtension>
+                            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">PremiumContent.Load.ToolTip</Ctor>
+                          </localization:LocalizedExtension>
+                        </FrameworkElement.ToolTip>
+                      </controls:ToggleSwitch>
+                    </Grid>
+                  </DataTemplate>
+                </GridViewColumn.CellTemplate>
+              </GridViewColumn>
+            </GridView>
+          </ListView.View>
+          <!--Unknown connection ID: 1-->
+        </ListView>
+      </StackPanel>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

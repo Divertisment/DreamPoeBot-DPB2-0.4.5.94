@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>DreamPoeBot</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net8.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="images\sword.png" />
+    <None Remove="images\key.png" />
+    <None Remove="images\running.png" />
+    <None Remove="images\icon.ico" />
+    <None Remove="images\logic.png" />
+    <None Remove="DreamPoeBot.DreamUpdate.DreamUpdate.Apply.exe" />
+    <None Remove="DreamPoeBot.DreamUpdate.DreamUpdater.Core.dll" />
+    <None Remove="CcrHH3tAm4veHXD4kx.Zdfc4UeXo9h8ZCdrJ2" />
+    <None Remove="TQxpWUA8uDOIGSCie5.tpOAamlWofbME7fGTC" />
+    <None Remove="DreamPoeBot.DreamUpdate.Newtonsoft.Json.dll" />
+    <EmbeddedResource Include="images\sword.png" LogicalName="images/sword.png" />
+    <EmbeddedResource Include="images\key.png" LogicalName="images/key.png" />
+    <EmbeddedResource Include="images\running.png" LogicalName="images/running.png" />
+    <EmbeddedResource Include="images\icon.ico" LogicalName="images/icon.ico" />
+    <EmbeddedResource Include="images\logic.png" LogicalName="images/logic.png" />
+    <EmbeddedResource Include="DreamPoeBot.DreamUpdate.DreamUpdate.Apply.exe" LogicalName="DreamPoeBot.DreamUpdate.DreamUpdate.Apply.exe" />
+    <EmbeddedResource Include="DreamPoeBot.DreamUpdate.DreamUpdater.Core.dll" LogicalName="DreamPoeBot.DreamUpdate.DreamUpdater.Core.dll" />
+    <EmbeddedResource Include="CcrHH3tAm4veHXD4kx.Zdfc4UeXo9h8ZCdrJ2" LogicalName="CcrHH3tAm4veHXD4kx.Zdfc4UeXo9h8ZCdrJ2" />
+    <EmbeddedResource Include="TQxpWUA8uDOIGSCie5.tpOAamlWofbME7fGTC" LogicalName="TQxpWUA8uDOIGSCie5.tpOAamlWofbME7fGTC" />
+    <EmbeddedResource Include="DreamPoeBot.DreamUpdate.Newtonsoft.Json.dll" LogicalName="DreamPoeBot.DreamUpdate.Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\DPB2\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics">
+      <HintPath>..\DPB2\SharpDX.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="RecastManaged">
+      <HintPath>..\DPB2\RecastManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\DPB2\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="DreamUpdater.Core">
+      <HintPath>..\DPB2\DreamUpdater.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DreamPoeBot.Localization" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\DPB2\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+      <HintPath>..\DPB2\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>..\DPB2\System.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="CommunityToolkit.HighPerformance">
+      <HintPath>..\DPB2\CommunityToolkit.HighPerformance.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

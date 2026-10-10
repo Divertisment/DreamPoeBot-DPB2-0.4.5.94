@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="DreamPoeBot.DreamPoe.PluginTemplateGui" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localization="clr-namespace:DreamPoeBot.Localization.Wpf;assembly=DreamPoeBot.Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:DreamPoeBot.DreamPoe">
+  <Grid Name="PluginTemplateGrid">
+    <GroupBox Padding="5" HorizontalAlignment="Left, Stretch" VerticalAlignment="Top, Stretch">
+      <HeaderedContentControl.Header>
+        <WrapPanel>
+          <CheckBox Name="PluginTemplateGuiPluginEnabledCheckBox" VerticalAlignment="Center">Enabled<!--Unknown connection ID: 2--></CheckBox>
+          <Label VerticalAlignment="Center" Content="|" />
+          <TextBlock Name="PluginTemplateGuiPluginGuideTextBlock">
+            <Hyperlink Name="PluginTemplateGuiPluginGuideHyperlink" BaselineAlignment="Center">Guide<!--Unknown connection ID: 4--></Hyperlink> <Label VerticalAlignment="Center" Content="|" /><!--Unknown connection ID: 3--></TextBlock>
+          <Label VerticalAlignment="Center">
+            <ContentControl.Content>
+              <localization:LocalizedExtension>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Content.Metadata.Author</Ctor>
+              </localization:LocalizedExtension>
+            </ContentControl.Content>
+          </Label>
+          <Label Name="PluginTemplateGuiPluginAuthorLabel" VerticalAlignment="Center" Content="">
+            <!--Unknown connection ID: 5-->
+          </Label>
+          <Label VerticalAlignment="Center" Content="|" />
+          <Label VerticalAlignment="Center">
+            <ContentControl.Content>
+              <localization:LocalizedExtension>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Content.Metadata.Version</Ctor>
+              </localization:LocalizedExtension>
+            </ContentControl.Content>
+          </Label>
+          <Label Name="PluginTemplateGuiPluginVersionLabel" VerticalAlignment="Center" Content="">
+            <!--Unknown connection ID: 6-->
+          </Label>
+          <Label VerticalAlignment="Center" Content="|" />
+          <Label VerticalAlignment="Center">
+            <ContentControl.Content>
+              <localization:LocalizedExtension>
+                <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Content.Metadata.Description</Ctor>
+              </localization:LocalizedExtension>
+            </ContentControl.Content>
+          </Label>
+          <Label Name="PluginTemplateGuiPluginDescriptionLabel" VerticalAlignment="Center" Content="">
+            <!--Unknown connection ID: 7-->
+          </Label>
+        </WrapPanel>
+      </HeaderedContentControl.Header>
+      <UserControl Name="PluginTemplateGuiContentUserControl" HorizontalAlignment="Left, Stretch" VerticalAlignment="Top, Stretch" IsEnabled="{Binding ElementName=PluginTemplateGuiPluginEnabledCheckBox, Path=IsChecked}">
+        <!--Unknown connection ID: 8-->
+      </UserControl>
+    </GroupBox>
+    <!--Unknown connection ID: 1-->
+  </Grid>
+</UserControl>

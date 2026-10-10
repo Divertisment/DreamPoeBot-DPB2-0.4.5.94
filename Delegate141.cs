@@ -1,0 +1,3 @@
+using System.Runtime.CompilerServices;
+
+internal delegate string Delegate141(ref DefaultInterpolatedStringHandler defaultInterpolatedStringHandler_0);

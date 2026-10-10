@@ -1,0 +1,1 @@
+internal delegate object Delegate332(object object_0, object object_1);

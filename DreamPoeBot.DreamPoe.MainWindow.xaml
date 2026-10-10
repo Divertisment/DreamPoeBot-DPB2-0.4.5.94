@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Controls:MetroWindow x:Class="DreamPoeBot.DreamPoe.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:lex="http://wpflocalizeextension.codeplex.com" xmlns:local="clr-namespace:DreamPoeBot.DreamPoe" xmlns:localization="clr-namespace:DreamPoeBot.Localization.Wpf;assembly=DreamPoeBot.Localization" Title="" Height="480" Width="640" WindowStartupLocation="CenterScreen">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <localization:CultureDisplayNameConverter x:Key="CultureDisplayNameConverter" />
+      <localization:CultureFlagConverter x:Key="CultureFlagConverter" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <UIElement.CommandBindings>
+    <CommandBinding Command="{x:Static local:MainWindow.OpenSettingsWindow}">
+      <!--Unknown connection ID: 2-->
+    </CommandBinding>
+  </UIElement.CommandBindings>
+  <DockPanel Width="Auto" Height="Auto" VerticalAlignment="Top, Stretch" HorizontalAlignment="Left, Stretch" LastChildFill="True">
+    <StatusBar Height="32" DockPanel.Dock="Bottom" Width="Auto" HorizontalAlignment="Left, Stretch" VerticalAlignment="Top, Stretch">
+      <StatusBarItem HorizontalAlignment="Left">
+        <Label Name="StatusBarLeftLabel" Content="">
+          <!--Unknown connection ID: 3-->
+        </Label>
+      </StatusBarItem>
+      <StatusBarItem HorizontalAlignment="Right">
+        <Label Name="StatusBarRightLabel" Content="">
+          <!--Unknown connection ID: 4-->
+        </Label>
+      </StatusBarItem>
+    </StatusBar>
+    <Controls:TransitioningContentControl Name="transitioningContentControl_0" Width="Auto" Height="Auto" Transition="Left" VerticalAlignment="Top, Stretch" HorizontalAlignment="Left, Stretch" VerticalContentAlignment="Center">
+      <!--Unknown connection ID: 5-->
+    </Controls:TransitioningContentControl>
+  </DockPanel>
+  <Controls:MetroWindow.LeftWindowCommands>
+    <Controls:WindowCommands>
+      <ComboBox Name="InterfaceLanguageComboBox" Width="54" Height="24" Margin="2,0,6,0" Background="#00FFFFFF" BorderThickness="0" Padding="0" SelectedValuePath="Name" TextSearch.TextPath="NativeName">
+        <FrameworkElement.ToolTip>
+          <localization:LocalizedExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Language.Change</Ctor>
+          </localization:LocalizedExtension>
+        </FrameworkElement.ToolTip>
+        <AutomationProperties.Name>
+          <localization:LocalizedExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Language.Change</Ctor>
+          </localization:LocalizedExtension>
+        </AutomationProperties.Name>
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type ComboBox}">
+            <Grid>
+              <ToggleButton Name="LanguageToggle" Focusable="False" Background="#00FFFFFF" BorderThickness="0" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                <Control.Template>
+                  <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Background="#00FFFFFF">
+                      <Path Data="M0,0 L6,0 L3,4" Fill="#FFFFFFFF" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" />
+                    </Border>
+                  </ControlTemplate>
+                </Control.Template>
+              </ToggleButton>
+              <ContentPresenter Name="LanguageFlagPresenter" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,16,0" Content="{TemplateBinding ComboBox.SelectionBoxItem}" ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}" />
+              <Border Name="LanguageFocusBorder" IsHitTestVisible="False" BorderBrush="#FFFFFFFF" BorderThickness="1" Opacity="0" />
+              <Popup Name="PART_Popup" Placement="Bottom" AllowsTransparency="True" Focusable="False" IsOpen="{TemplateBinding ComboBox.IsDropDownOpen}">
+                <Border Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1" MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}">
+                  <ScrollViewer MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}" CanContentScroll="True">
+                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                  </ScrollViewer>
+                </Border>
+              </Popup>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="UIElement.IsKeyboardFocusWithin" Value="True">
+                <Setter TargetName="LanguageFocusBorder" Property="UIElement.Opacity" Value="0.6" />
+              </Trigger>
+              <Trigger Property="UIElement.IsEnabled" Value="False">
+                <Setter TargetName="LanguageFlagPresenter" Property="UIElement.Opacity" Value="0.5" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Control.Template>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Image Width="24" Height="16" Margin="2,0" Source="{Binding Converter={StaticResource CultureFlagConverter}}" ToolTip="{Binding Converter={StaticResource CultureDisplayNameConverter}}" AutomationProperties.Name="{Binding Converter={StaticResource CultureDisplayNameConverter}}" />
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <!--Unknown connection ID: 6-->
+      </ComboBox>
+      <Button Name="SettingsButton" FontWeight="Bold" FontSize="13px">
+        <ContentControl.Content>
+          <localization:LocalizedExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Settings.Window.Title</Ctor>
+          </localization:LocalizedExtension>
+        </ContentControl.Content>
+        <!--Unknown connection ID: 7-->
+      </Button>
+      <Button Name="TitleButton" IsHitTestVisible="False" Content="DPB2">
+        <!--Unknown connection ID: 8-->
+      </Button>
+      <Button Name="ProcessButton">
+        <ContentControl.Content>
+          <localization:LocalizedExtension>
+            <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Main.ProcessId.Empty</Ctor>
+          </localization:LocalizedExtension>
+        </ContentControl.Content>
+        <!--Unknown connection ID: 9-->
+      </Button>
+    </Controls:WindowCommands>
+  </Controls:MetroWindow.LeftWindowCommands>
+  <Controls:MetroWindow.RightWindowCommands>
+    <Controls:WindowCommands />
+  </Controls:MetroWindow.RightWindowCommands>
+  <!--Unknown connection ID: 1-->
+</Controls:MetroWindow>

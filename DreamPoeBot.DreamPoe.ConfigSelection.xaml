@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="DreamPoeBot.DreamPoe.ConfigSelection" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:localization="clr-namespace:DreamPoeBot.Localization.Wpf;assembly=DreamPoeBot.Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:lex="http://wpflocalizeextension.codeplex.com" xmlns:settings="clr-namespace:DreamPoeBot.Loki" xmlns:dreampoebot="clr-namespace:DreamPoeBot" xmlns:dreampoe="clr-namespace:DreamPoeBot.DreamPoe">
+  <Grid Margin="10" VerticalAlignment="Top" DataContext="{x:Static settings:GlobalSettings.Instance}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+    <CheckBox Name="AutoSelectConfigCheckBox" Grid.Row="1" HorizontalAlignment="Left" Margin="0,8,10,0" VerticalAlignment="Center" Width="Auto" IsChecked="{Binding AutoChooseConfig}">
+      <ContentControl.Content>
+        <localization:LocalizedExtension>
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Configuration.Selection.AutoSelect</Ctor>
+        </localization:LocalizedExtension>
+      </ContentControl.Content>
+      <!--Unknown connection ID: 2-->
+    </CheckBox>
+    <ComboBox Name="ConfigComboBox" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" MinHeight="26" Width="Auto" FontSize="14" IsEditable="True" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding LastUsedConfiguration}">
+      <!--Unknown connection ID: 3-->
+    </ComboBox>
+    <Button Name="ChooseConfigButton" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0,8,0,0" VerticalAlignment="Top" MinWidth="75" Width="Auto" HorizontalContentAlignment="Center">
+      <ContentControl.Content>
+        <localization:LocalizedExtension>
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Configuration.Selection.Choose</Ctor>
+        </localization:LocalizedExtension>
+      </ContentControl.Content>
+      <!--Unknown connection ID: 4-->
+    </Button>
+    <TextBlock Name="ConfigInstructionsTextBlock" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,12,0,0" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="Auto" Height="Auto">
+      <TextBlock.Text>
+        <localization:LocalizedExtension>
+          <Ctor xmlns="https://github.com/icsharpcode/ILSpy">Configuration.Selection.Instructions</Ctor>
+        </localization:LocalizedExtension>
+      </TextBlock.Text>
+      <!--Unknown connection ID: 5-->
+    </TextBlock>
+  </Grid>
+  <!--Unknown connection ID: 1-->
+</UserControl>
